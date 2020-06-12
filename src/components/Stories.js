@@ -25,20 +25,26 @@ const COLUMNS = {
   },
 };
 
-const Stories = ({ stories }) => (
+const Stories = ({ stories, onArchive }) => (
   <div className="stories">
     <StoriesHeader columns={COLUMNS} />
 
     {(stories || []).map((story) => (
-      <Story key={story.objectID} story={story} columns={COLUMNS} />
+      <Story
+        key={story.objectID}
+        story={story}
+        columns={COLUMNS}
+        onArchive={onArchive}
+      />
     ))}
   </div>
 );
+
 const StoriesHeader = ({ columns }) => (
   <div className="stories-header">
-    {Object.keys(COLUMNS).map((key) => (
-      <span key={key} style={{ width: COLUMNS[key].width }}>
-        {COLUMNS[key].label}
+    {Object.keys(columns).map((key) => (
+      <span key={key} style={{ width: columns[key].width }}>
+        {columns[key].label}
       </span>
     ))}
   </div>
