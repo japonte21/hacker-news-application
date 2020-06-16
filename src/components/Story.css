@@ -1,33 +1,33 @@
 .stories {
-  margin: 20px 0;
+    margin: 24px 0;
 }
- 
+
 .stories-header {
-  display: flex;
-  line-height: 24px;
-  font-size: 16px;
-  padding: 0 10px;
-  justify-content: space-between;
+    display: flex;
+    line-height: 24px;
+    font-size: 16px;
+    padding: 0 10px;
+    justify-content: space-between;
 }
- 
+
 .stories-header > span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 0 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 5px;
 }
 
 .story {
-  display: flex;
-  line-height: 24px;
-  white-space: nowrap;
-  margin: 10px 0;
-  padding: 10px;
-  background: #ffffff;
-  border: 1px solid #e3e3e3;
+    display: flex;
+    line-height: 24px;
+    white-space: nowrap;
+    margin: 10px 0;
+    padding: 10px;
+    background: #1d1e24;
+    border: 1px solid #343741;
 }
- 
+
 .story > span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 0 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 5px;
 }
