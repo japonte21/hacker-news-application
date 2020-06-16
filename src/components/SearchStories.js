@@ -1,30 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { doFetchStories } from "../actions/story";
 import Button from "./Button";
 
-const applyQueryState = (query) => () => ({
-  query,
-});
-
-class SearchStories extends Component {
+class SearchStories extends React.Component {
   constructor(props) {
     super(props);
-
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
     this.state = {
       query: "",
     };
-
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
   onSubmit(event) {
     const { query } = this.state;
     if (query) {
       this.props.onFetchStories(query);
-
-      this.setState(applyQueryState(""));
+      this.setState({ query: "" });
     }
 
     event.preventDefault();
@@ -32,7 +25,7 @@ class SearchStories extends Component {
 
   onChange(event) {
     const { value } = event.target;
-    this.setState(applyQueryState(value));
+    this.setState({ query: value });
   }
 
   render() {
