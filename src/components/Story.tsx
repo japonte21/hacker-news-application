@@ -1,10 +1,16 @@
 import React from "react";
+import "./Story.css";
+import ButtonInline from "./ButtonInline";
 import { connect } from "react-redux";
 import { doArchiveStory } from "../actions/archive";
-import { ButtonInline } from "./Button";
-import "./Story.css";
 
-const Story = ({ story, columns, onArchive }) => {
+type StoryProps = {
+  story: any,
+  columns: any,
+  onArchive: any,
+};
+
+const Story: React.FC<StoryProps> = ({ story, columns, onArchive }) => {
   const { title, url, author, num_comments, points, objectID } = story;
 
   return (
@@ -22,8 +28,8 @@ const Story = ({ story, columns, onArchive }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  onArchive: (id) => dispatch(doArchiveStory(id)),
+const mapDispatchToProps = (dispatch: any) => ({
+  onArchive: (id: string) => dispatch(doArchiveStory(id)),
 });
 
 export default connect(null, mapDispatchToProps)(Story);

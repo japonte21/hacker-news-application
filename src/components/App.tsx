@@ -1,10 +1,9 @@
-import React from "react";
+import * as React from "react";
 import "./App.css";
-
 import Stories from "./Stories";
 import SearchStories from "./SearchStories";
 
-const App = () => (
+export const App: React.FC = () => (
   <div className="app">
     <div
       style={{
@@ -23,5 +22,3 @@ const App = () => (
     <Stories />
   </div>
 );
-
-export default App;

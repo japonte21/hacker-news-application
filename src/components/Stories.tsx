@@ -1,7 +1,7 @@
 import React from "react";
+import "./Stories.css";
 import { connect } from "react-redux";
 import { getReadableStories, getFetchError } from "../selectors/story";
-import "./Stories.css";
 
 import Story from "./Story";
 
@@ -12,11 +12,11 @@ const COLUMNS = {
   },
   author: {
     label: "Author",
-    width: "30%",
+    width: "20%",
   },
   comments: {
     label: "Comments",
-    width: "10%",
+    width: "20%",
   },
   points: {
     label: "Points",
@@ -27,29 +27,35 @@ const COLUMNS = {
   },
 };
 
-const Stories = ({ stories, error }) => (
+type StoriesProps = {
+  stories: any,
+  error: any,
+};
+
+const Stories: React.FC<StoriesProps> = ({ stories, error }) => (
   <div className="stories">
     <StoriesHeader columns={COLUMNS} />
 
     {error && <p className="error">Something went wrong ...</p>}
 
-    {(stories || []).map((story) => (
+    {(stories || []).map((story: any) => (
       <Story key={story.objectID} story={story} columns={COLUMNS} />
     ))}
   </div>
 );
 
-const StoriesHeader = ({ columns }) => (
+type StoriesHeaderProps = {
+  columns: any,
+};
+
+const StoriesHeader: React.FC<StoriesHeaderProps> = ({ columns }) => (
   <div className="stories-header">
-    {Object.keys(columns).map((key) => (
-      <span key={key} style={{ width: columns[key].width }}>
-        {columns[key].label}
-      </span>
-    ))}
+    {
+    }
   </div>
 );
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   stories: getReadableStories(state),
   error: getFetchError(state),
 });
