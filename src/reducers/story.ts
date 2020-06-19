@@ -28,7 +28,8 @@ function storyReducer(state = INITIAL_STATE, action: any) {
     case STORIES_FETCH_ERROR: {
       return applyFetchErrorStories(state, action);
     }
-    default: return state;
+    default:
+      return state;
   }
 }
 

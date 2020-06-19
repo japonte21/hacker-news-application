@@ -4,7 +4,7 @@ type ButtonProps = {
   onClick?(e: React.MouseEvent<any>): any;
   className?: string;
   type?: any;
-}
+};
 
 const Button: FunctionComponent<ButtonProps> = ({
   onClick,

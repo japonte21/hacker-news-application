@@ -5,9 +5,9 @@ import { connect } from "react-redux";
 import { doArchiveStory } from "../actions/archive";
 
 type StoryProps = {
-  story: any,
-  columns: any,
-  onArchive: any,
+  story: any;
+  columns: any;
+  onArchive: any;
 };
 
 const Story: React.FC<StoryProps> = ({ story, columns, onArchive }) => {

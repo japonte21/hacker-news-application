@@ -28,8 +28,8 @@ const COLUMNS = {
 };
 
 type StoriesProps = {
-  stories: any,
-  error: any,
+  stories: any;
+  error: any;
 };
 
 const Stories: React.FC<StoriesProps> = ({ stories, error }) => (
@@ -45,14 +45,11 @@ const Stories: React.FC<StoriesProps> = ({ stories, error }) => (
 );
 
 type StoriesHeaderProps = {
-  columns: any,
+  columns: any;
 };
 
 const StoriesHeader: React.FC<StoriesHeaderProps> = ({ columns }) => (
-  <div className="stories-header">
-    {
-    }
-  </div>
+  <div className="stories-header">{}</div>
 );
 
 const mapStateToProps = (state: any) => ({
